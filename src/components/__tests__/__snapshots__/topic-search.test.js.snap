@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header component should remove default topic and look for other topic 1`] = `undefined`;
+
+exports[`header component should render 1`] = `undefined`;

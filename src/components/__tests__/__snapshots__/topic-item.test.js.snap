@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header component should contains no-topic labels if no labels for a repo is found 1`] = `undefined`;
+
+exports[`header component should render sucessfully a topic 1`] = `undefined`;
