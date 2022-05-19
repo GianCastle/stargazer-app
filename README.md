@@ -1,3 +1,4 @@
+# Stargazer app - simple app to view github stars based on topics
 # How to install
 ⚠️ Your machine must have installed `node @ "16.13.1"`. It is recommended to use a enviroment version tool such as [NVM](https://github.com/nvm-sh/nvm)
  
@@ -16,6 +17,8 @@ I wanted to follow the  KISS principle as far as possible. So this is the curren
 - I really dislike the `node->edges->nodes` object structure, we probably want to add some kindof a `middleware` that beautify the response structure in a more friendly way
 - For the sake of speed I used `javascript` but Typescript is the new JavaScript I think this project can benefit from it if for example, we want to add the response `middleware` 
 - I like to follow a pattern where my pages do not use `react standar hooks`, pages or components only have `custom hooks` embedded in them and these hooks implement the `react standar hooks`. See https://kyleshevlin.com/use-encapsulation
+- A pagination would be ideal for this kind of lists
+- Would be great to add `WCAG`
 
 # Getting Started with Create React App
 
