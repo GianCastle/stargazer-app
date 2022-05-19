@@ -1,4 +1,6 @@
 # Stargazer app - simple app to view github stars based on topics
+<img width="1245" alt="image" src="https://user-images.githubusercontent.com/6842883/169386345-74e83984-89bd-4081-a2d5-968be0fecf2e.png">
+
 # How to install
 ⚠️ Your machine must have installed `node @ "16.13.1"`. It is recommended to use a enviroment version tool such as [NVM](https://github.com/nvm-sh/nvm)
  
