@@ -11,21 +11,32 @@ export default function TopicsResults(props) {
 
   const topics = data?.search?.edges?.map((edge) => edge) ?? [];
 
+  if (error) return (
+    <div className='topic-item--error' data-testid="topic-item-error">
+      <i className="fa-solid  fa-x"></i>
+      <h6>There was a error while loading your topics!</h6>
+      <code>
+        {JSON.stringify(error)}
+      </code>
+    </div>
+  )
+
+  if (loading) return (
+    <div className='topic-item--loading' data-testid="topic-item-loading">
+      <i className="fa fa-spinner fa-spin mr-4" />
+      <span>Looking for your favorite topic!</span>
+    </div>
+  )
+
   return (
     <>
-      {loading && (
-        <div className='topic-item--loading' data-testid="topic-item-loading">
-          <i className="fa fa-spinner fa-spin mr-4" />
-          <span>Looking for your favorite topic!</span>
+      {!Boolean(topics).length && (
+        <div className='topic-item--empty ' data-testid="topic-item-empty">
+          <i className="fa-solid fa-x"></i>
+          <span>No topics found!</span>
         </div>
-      )}
-      {error && (
-        <div className='topic-item--error' data-testid="topic-item-error">
-          <i className="fa-solid  fa-x"></i>
-          <span>There was a error while loading your topics!</span>
-        </div>
-      )}
 
+      )}
       {!loading && !error && topics.map((topic) => (
         <ul className="list-group topic-item" key={topic?.node?.resourcePath}>
           <TopicItem topic={topic} setSelectedcriteria={setSelectedcriteria} />
