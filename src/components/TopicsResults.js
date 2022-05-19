@@ -7,7 +7,9 @@ export default function TopicsResults(props) {
 
   const { criteria, setSelectedcriteria } = props;
   const searchQuery = useMemo(() => `${criteria} stars:>1000`, [criteria])
-  const { loading, error, data } = useQuery(GET_GITHUB_TOPICS, { variables: { search: searchQuery } });
+  const { loading, error, data } = useQuery(GET_GITHUB_TOPICS, {
+    variables: { search: searchQuery }, notifyOnNetworkStatusChange: true,
+  });
 
   const topics = data?.search?.edges?.map((edge) => edge) ?? [];
 
@@ -28,15 +30,15 @@ export default function TopicsResults(props) {
     </div>
   )
 
+  if (topics.length === 0) return (
+    <div className='topic-item--empty ' data-testid="topic-item-empty">
+      <i className="fa-solid fa-x"></i>
+      <span>No topics found!</span>
+    </div>
+  )
+
   return (
     <>
-      {!Boolean(topics).length && (
-        <div className='topic-item--empty ' data-testid="topic-item-empty">
-          <i className="fa-solid fa-x"></i>
-          <span>No topics found!</span>
-        </div>
-
-      )}
       {!loading && !error && topics.map((topic) => (
         <ul className="list-group topic-item" key={topic?.node?.resourcePath}>
           <TopicItem topic={topic} setSelectedcriteria={setSelectedcriteria} />
