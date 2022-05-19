@@ -1,3 +1,22 @@
+# How to install
+⚠️ Your machine must have installed `node @ "16.13.1"`. It is recommended to use a enviroment version tool such as [NVM](https://github.com/nvm-sh/nvm)
+ 
+- Clone this repo 
+- Inside the folder, run `npm install`
+- Before running the app, we must create and `.env` that have the same keys as in the `.env.example` file
+- For getting a Github Auth Token please, [read this blog](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) first 
+- Make sure to paste the Github Token into the `.env` file
+- We can run the app running `npm start` and woalah! 💫
+
+# Tech Stack 💻
+I wanted to follow the  KISS principle as far as possible. So this is the current stack in this FE
+- `react`, `apollo`, `bootstrap`, `javascript`, `jest`, `font-awesome`
+
+# Areas of improvement 
+- I really dislike the `node->edges->nodes` object structure, we probably want to add some kindof a `middleware` that beautify the response structure in a more friendly way
+- For the sake of speed I used `javascript` but Typescript is the new JavaScript I think this project can benefit from it if for example, we want to add the response `middleware` 
+- I like to follow a pattern where my pages do not use `react standar hooks`, pages or components only have `custom hooks` embedded in them and these hooks implement the `react standar hooks`. See https://kyleshevlin.com/use-encapsulation
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
